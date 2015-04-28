@@ -1,7 +1,8 @@
 package org.example.selenium.futureprocessing;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.example.selenium.Page;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +12,7 @@ public class FutureProcessingHomePage extends Page {
 	}
 
 	public FutureProcessingHomePage assertPageHeaderExists() {
-		Assert.assertEquals(1, driver.findElements(By.cssSelector("h1.site-title a.box-link")).size());
+		assertThat(driver.findElements(By.cssSelector("h1.site-title a.box-link")).size()).isEqualTo(1);
 		return this;
 	}
 }
