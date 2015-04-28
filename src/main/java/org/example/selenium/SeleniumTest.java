@@ -6,6 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+/**
+ * Base class for all selenium tests
+ *
+ * @author Maciej Hryniszak
+ */
 public class SeleniumTest {
 	protected static WebDriver driver;
 
@@ -18,5 +23,4 @@ public class SeleniumTest {
 	public static void closeWebDriver() {
 		driver.close();
 	}
-
 }

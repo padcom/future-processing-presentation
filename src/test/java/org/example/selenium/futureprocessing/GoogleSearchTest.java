@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class GoogleSearchTest extends SeleniumTest {
 	@Test
-	public void search_for_future_processing_1() {
+	public void search_for_future_processing() {
 		new GoogleHomePage(driver)
 			.search("future processing")
 			.selectNthResult(0)
@@ -14,7 +14,7 @@ public class GoogleSearchTest extends SeleniumTest {
 	}
 
 	@Test
-	public void search_for_future_processing_2() {
+	public void search_for_future_processing_using_scenario() {
 		new GoogleHomePage(driver)
 			.run(new EnterFutureProcessingPageViaGoogleSearchScenario())
 			.assertPageHeaderExists();
