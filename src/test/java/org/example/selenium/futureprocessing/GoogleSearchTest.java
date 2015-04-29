@@ -9,6 +9,7 @@ public class GoogleSearchTest extends SeleniumTest {
 	public void search_for_future_processing() {
 		new GoogleHomePage(driver)
 			.search("future processing")
+			.waitForSearchResults(10)
 			.selectNthResult(0)
 			.assertPageHeaderExists();
 	}
@@ -16,7 +17,8 @@ public class GoogleSearchTest extends SeleniumTest {
 	@Test
 	public void search_for_future_processing_using_scenario() {
 		new GoogleHomePage(driver)
-			.run(new EnterFutureProcessingPageViaGoogleSearchScenario())
+			.run(new EnterFutureProcessingPageViaGoogleSearchScenario()
+				.timeout(20))
 			.assertPageHeaderExists();
 	}
 }
